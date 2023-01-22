@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+if [ "$1" = "install" ]; then
+   bash /usr/lib/zombiespices/installer.sh
+fi
