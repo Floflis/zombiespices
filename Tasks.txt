@@ -1,2 +1,3 @@
 - Ask before installing the z spice
 - detect if manifest.json's "type" field value is "multi", then install a spice as both applet/desklet/extension
+- mkdir: cannot create directory ‘/home/daniella/.cinnamon/configs/buildmark@floflis’: File exists
