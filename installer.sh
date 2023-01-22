@@ -21,7 +21,7 @@ sudo rsync -av "$zombiespicehost"/. /usr/share/cinnamon/"$spicetype""s"/$zombies
 rm -r "$zombiespicehost"
 
 echo "Installing zombie-$spicetype '$zombiespicename' ($zombiespiceuuid)..."
-cd "$SCRIPTPATH"
+cd "$PWD" #from https://unix.stackexchange.com/a/52918/470623
 
 if [ ! -e /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid" ]; then mkdir /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid"; fi
 sudo rsync -av content/. /usr/share/cinnamon/"$spicetype""s"/$zombiespiceuuid
