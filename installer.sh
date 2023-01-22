@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+initial_wd=`pwd`
 
 spicetype=$(jq -r '.type' manifest.json)
 zombiespicename=$(jq -r '.name' content/metadata.json)
@@ -21,7 +22,7 @@ sudo rsync -av "$zombiespicehost"/. /usr/share/cinnamon/"$spicetype""s"/$zombies
 rm -r "$zombiespicehost"
 
 echo "Installing zombie-$spicetype '$zombiespicename' ($zombiespiceuuid)..."
-cd "$PWD" #from https://unix.stackexchange.com/a/52918/470623
+cd "$initial_wd" #from https://unix.stackexchange.com/a/52919/470623
 
 if [ ! -e /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid" ]; then mkdir /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid"; fi
 sudo rsync -av content/. /usr/share/cinnamon/"$spicetype""s"/$zombiespiceuuid
