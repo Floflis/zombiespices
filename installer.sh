@@ -30,7 +30,7 @@ sudo rsync -av content/. /usr/share/cinnamon/"$spicetype""s"/$zombiespiceuuid
 echo "(Sym)Linking from host $spicetype..."
 while IFS="" read -r p || [ -n "$p" ]
 do
-  ln -s /usr/share/cinnamon/"$spicetype""s"/"$zombiespicehost"/"$p" /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid"/
+  ln -sf /usr/share/cinnamon/"$spicetype""s"/"$zombiespicehost"/"$p" /usr/share/cinnamon/"$spicetype""s"/"$zombiespiceuuid"/
 done < symlink.txt
 # from https://stackoverflow.com/a/1521498/5623661
 
